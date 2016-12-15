@@ -1,0 +1,33 @@
+ <div class="container">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- HTML for Temperature Conversions -->
+    <h2>Temperature Converter</h2>
+    <form class="form-horizontal" name="convert">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Celcius"> Celsius:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="Celsius" name="Celsius" (keyup.enter)="CelsiustoFahrenheit()" type="number" step="any" class="form-control" placeholder="Enter a number">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Fahrenheit">Fahrenheit:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="Fahrenheit" name="Fahrenheit" (keyup.enter)="FahrenheittoCelsius()" type="number" step="any" class="form-control" placeholder="Enter a number">
+        </div>
+        <!-- HTML for the "Conversion Button" -->
+        <div class="button-container">
+        <div class="button">
+          <button type="button" class="btn btn-primary" (click)="button()" step="any">convert</button>
+        </div>
+        </div>
+        <!-- HTML for "Total Conversion" Counter -->
+          <div class="counter">
+            <h2> Total Conversions : {{counter}} </h2>
+        </div>    
+      </div>
+    </form>
+  </div>

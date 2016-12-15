@@ -1,0 +1,74 @@
+<div class="container">
+<div class="jumbotron">
+
+  <div class="col-sm-12">
+      <h2>BMI Calculator</h2>
+  </div>
+
+  <!-- HTML for Weight -->
+  <!-- Title -->
+  <div class="col-sm-12">
+      <h3>Enter your Weight</h3>
+  </div>
+  <!-- Displays "Unit" names -->  
+  <div class="names">
+      <label class="control-label col-sm-4" for="stone">Stone</label>
+      <label class="control-label col-sm-4" for="pounds">Pounds</label>
+      <label class="control-label col-sm-4" for="kilogram">or Kilograms</label>
+  </div>
+  <!-- Takes user input and applies conversions -->  
+  <form class="form-horizontal" name="convert">      
+    <div class="col-sm-4">
+      <input [(ngModel)]="stone" name="stone" (keyup.enter)="SToKG()"  class="form-control" placeholder="Enter a number">
+    </div> 
+    <div class="col-sm-4">
+      <input [(ngModel)]="pounds" name="pounds" (keyup.enter)="PToKG()"  class="form-control" placeholder="Enter a number">
+    </div>  
+    <div class="col-sm-4">
+      <input [(ngModel)]="kilogram" name="kilogram" (keyup.enter)="KGToSP()"  class="form-control" placeholder="Enter a number">
+    </div>
+  </form>
+  <!-- HTML for Height -->
+  <!-- Title -->
+  <div class="col-sm-12">
+    <h3>Enter Your Height</h3>
+  </div>
+  <!-- Displays "Unit" names --> 
+  <div class="names">
+    <label class="control-label col-sm-4" for="feet">Feet</label>
+    <label class="control-label col-sm-4" for="inches">Inches</label>
+    <label class="control-label col-sm-4" for="metres">or Metres</label>
+  </div>
+  <!-- Takes user input and applies conversions -->
+  <form class="form-horizontal" name="convert"> 
+    <div class="col-sm-4">
+      <input [(ngModel)]="feet" name="feet" (keyup.enter)="FIToCM()"  class="form-control" placeholder="Enter a number">        
+    </div>
+    <div class="col-sm-4">
+      <input [(ngModel)]="inches" name="inches" (keyup.enter)="FIToCM()"  class="form-control" placeholder="Enter a number">      
+    </div>
+    <div class="col-sm-4">
+      <input [(ngModel)]="metres" name="metres" (keyup.enter)="MToCM()" class="form-control" placeholder="Enter a number">
+    </div>
+  </form>
+  <!-- HTML for Conversion Button -->
+      <div class="col-sm-12">
+          <h3></h3>
+      </div>
+      <div class="button-container">
+        <button type="button" class="btn btn-primary" (click)="CalcBMI()" step="any">Calculate BMI</button>
+      </div>
+
+      <div class="col-sm-12">
+        <h6>Enter your Weight in either stones/ pounds or Kilograms and your height either in feet/ inches or metres.</h6>
+      </div>     
+      <!-- HTML for Result -->    
+        <h4>Result:</h4>
+          <div class="result">
+            <!--The "{{BMI}}" calls for the conversion methods -->
+            <h3>Your estimated BMI is {{BMI}}, this is in the <span [style.color]="colour()">{{category}}</span> </h3>
+          </div>
+      </div>
+</div>
+
+

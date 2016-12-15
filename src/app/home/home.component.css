@@ -1,0 +1,13 @@
+.container {
+    margin: auto;
+    width: auto;
+    padding: 10px;
+}
+
+p {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
